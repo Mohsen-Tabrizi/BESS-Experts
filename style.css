@@ -315,3 +315,21 @@ a {
     padding-top: 72px;
   }
 }
+
+/* Language switch */
+.lang-switch {
+  margin-left: 12px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-switch a {
+  opacity: 0.8;
+}
+
+.lang-switch a.active-lang {
+  opacity: 1;
+  font-weight: 700;
+  text-decoration: underline;
+}
