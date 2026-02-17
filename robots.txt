@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bess-experts.com/sitemap.xml
