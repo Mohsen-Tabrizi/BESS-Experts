@@ -1,77 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>BESS Experts | Independent BESS, PV and Grid Technical Services, Reports and Media</title>
+  <title>BESS Experts | Technical Services, Inspections and Expert Reports</title>
+  <meta name="description" content="BESS Experts provides technical services, inspections and expert reports for Battery Energy Storage Systems (BESS), PV and grid integration. Independent lifecycle support: due diligence, delivery verification, commissioning validation and recurring inspections." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://bess-experts.com/" />
+  <link rel="alternate" hreflang="en" href="https://bess-experts.com/" />
+  <link rel="alternate" hreflang="de" href="https://bess-experts.com/de.html" />
+  <link rel="alternate" hreflang="zh" href="https://bess-experts.com/zh.html" />
+  <link rel="alternate" hreflang="x-default" href="https://bess-experts.com/" />
 
-  <meta name="description" content="BESS Experts delivers independent technical services for Battery Energy Storage Systems, PV plants and grid integration: condition monitoring, due diligence, DGUV V3 testing, audits, inspections, expert reports and practical industry media.">
+  <!-- Favicon: add one of these files to repo root -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.png" type="image/png">
 
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="BESS Experts" />
+  <meta property="og:title" content="BESS Experts | Technical Services, Inspections and Expert Reports" />
+  <meta property="og:description" content="Independent lifecycle support for BESS with PV and grid integration. Due diligence, inspections, commissioning validation and recurring verification." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bess-experts.com/" />
+  <!-- Optional: add og image later -->
+  <!-- <meta property="og:image" content="https://bess-experts.com/og.jpg" /> -->
 
-  <link rel="canonical" href="https://bess-experts.com/">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BESS Experts | Technical Services, Inspections and Expert Reports" />
+  <meta name="twitter:description" content="Independent lifecycle support for BESS, PV and grid integration: due diligence, inspections and expert reporting." />
 
-  <!-- Hreflang (German page will be added later) -->
-  <link rel="alternate" hreflang="en" href="https://bess-experts.com/">
-  <link rel="alternate" hreflang="de" href="https://bess-experts.com/de.html">
-  <link rel="alternate" hreflang="x-default" href="https://bess-experts.com/">
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Social preview -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="BESS Experts | Independent BESS, PV and Grid Technical Services">
-  <meta property="og:description" content="Independent technical services and bankable reporting for BESS, PV and grid assets: monitoring, audits, DGUV V3 testing, due diligence, expert reports, plus practical industry media.">
-  <meta property="og:url" content="https://bess-experts.com/">
-  <meta property="og:image" content="https://bess-experts.com/og-image.jpg">
+  <!-- Language routing: redirects only once per device unless user overrides -->
+  <script>
+    (function () {
+      try {
+        var path = window.location.pathname || "/";
+        var isRoot = (path === "/" || path === "/index.html");
+        if (!isRoot) return;
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BESS Experts | Independent Technical Services for BESS, PV and Grid">
-  <meta name="twitter:description" content="Monitoring, due diligence, DGUV V3 testing, inspections and expert reports for BESS, PV and grid integration.">
-  <meta name="twitter:image" content="https://bess-experts.com/og-image.jpg">
+        var params = new URLSearchParams(window.location.search);
+        if (params.has("lang")) return; // manual override: ?lang=en / de / zh
 
-  <link rel="stylesheet" href="style.css">
+        var chosen = localStorage.getItem("bessexperts_lang_choice");
+        if (chosen) return; // user already had a choice before
 
-  <!-- Structured data for SEO -->
+        var lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+
+        // Map browser language to pages
+        // German: de, de-de, de-at, de-ch
+        if (lang.startsWith("de")) {
+          window.location.replace("/de.html");
+          return;
+        }
+
+        // Chinese: zh, zh-cn, zh-hans, zh-hant, zh-tw, zh-hk
+        if (lang.startsWith("zh")) {
+          window.location.replace("/zh.html");
+          return;
+        }
+
+        // Default stays EN
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "BESS Experts",
-        "url": "https://bess-experts.com/",
-        "logo": "https://bess-experts.com/logo.png",
-        "email": "info@bess-experts.com",
-        "sameAs": [
-          "https://www.linkedin.com/"
-        ]
-      },
-      {
-        "@type": "ProfessionalService",
-        "name": "BESS Experts Technical Services",
-        "provider": {
-          "@type": "Organization",
-          "name": "BESS Experts"
-        },
-        "areaServed": "Europe",
-        "serviceType": [
-          "Condition Monitoring",
-          "Technical Due Diligence",
-          "Owner’s Engineering",
-          "DGUV V3 Testing",
-          "PV Yield Reports",
-          "Damage Expert Reports",
-          "Glare Assessment",
-          "Drone Inspections",
-          "Grid Integration and Compliance Support",
-          "BESS Monitoring and Analysis",
-          "Power Quality Monitoring",
-          "HSE Advisory"
-        ],
-        "url": "https://bess-experts.com/#services"
-      }
+    "@type": "Organization",
+    "name": "BESS Experts",
+    "url": "https://bess-experts.com/",
+    "logo": "https://bess-experts.com/logo.png",
+    "description": "Technical services, inspections and expert reports for Battery Energy Storage Systems (BESS), PV and grid integration.",
+    "sameAs": [
+      "https://www.linkedin.com"
     ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BESS Experts",
+    "url": "https://bess-experts.com/",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://bess-experts.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -83,470 +107,348 @@
         <img src="logo.png" alt="BESS Experts Logo" class="logo">
         <span class="brand-name">BESS Experts</span>
       </div>
-
       <nav class="nav-links">
+        <a href="#services">Technical Services</a>
+        <a href="#inspections">Inspections & Verification</a>
+        <a href="#advisory">Due Diligence & Advisory</a>
+        <a href="#knowledge">Knowledge & Podcast</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#media">Media</a>
-        <a href="#topics">Topics</a>
         <a href="#contact">Contact</a>
-
-        <span class="lang-switch">
-          <a href="index.html" class="active-lang" aria-current="page">EN</a>
-          <a href="de.html">DE</a>
-        </span>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Independent Technical Services and Media for BESS, PV and Grid Integration</h1>
-          <p>
-            BESS Experts combines practical field experience with structured engineering thinking.
-            We deliver independent assessments, monitoring, audits and expert reports for Battery Energy Storage Systems,
-            photovoltaic assets and grid components.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#services" class="btn primary">Explore services</a>
-            <a href="#contact" class="btn ghost">Request a consultation</a>
-          </div>
-
-          <div class="hero-tags">
-            <span>Battery Energy Storage</span>
-            <span>PV and grid compliance</span>
-            <span>Monitoring and expert reports</span>
-          </div>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>BESS Technical Services, Inspections and Expert Reports</h1>
+        <p>
+          Independent lifecycle support for Battery Energy Storage Systems (BESS) with PV and grid integration.
+          Evidence based reporting, recurring inspections and technical advisory for safer, more reliable projects.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn primary">Request a technical consultation</a>
+          <a href="#knowledge" class="btn ghost">Listen to the latest podcast</a>
         </div>
-
-        <div class="hero-side">
-          <div class="hero-box">
-            <h2>What you get with BESS Experts</h2>
-            <ul>
-              <li>Independent, vendor-neutral technical evaluation</li>
-              <li>Actionable reporting for owners, lenders, insurers and investors</li>
-              <li>Monitoring-driven insights that reduce downtime and OPEX</li>
-              <li>Clear documentation that stands up in real projects</li>
-            </ul>
-          </div>
+        <div class="hero-tags">
+          <span>Battery Energy Storage</span>
+          <span>Inspections and verification</span>
+          <span>Grid integration</span>
         </div>
-
       </div>
-    </section>
 
-    <section id="about" class="section">
-      <div class="container two-column">
-        <div>
-          <h2>About BESS Experts</h2>
+      <div class="hero-side">
+        <div class="hero-box">
+          <h2>What BESS Experts does</h2>
+          <ul>
+            <li>Technical services across the full BESS lifecycle</li>
+            <li>Independent inspections and recurring verification</li>
+            <li>Expert reports and technical due diligence</li>
+            <li>20+ years of engineering and field experience</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Technical Services</h2>
+      <p>
+        Independent engineering support for BESS projects from concept to stable operation.
+        BESS first, PV where relevant and always aligned with grid requirements.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Planning and design review</h3>
           <p>
-            BESS Experts is built to give the energy storage and renewable sector a technically honest voice and a practical
-            set of independent services. We support projects across the full lifecycle, from early-stage evaluation to operational monitoring,
-            inspections, compliance support and expert reporting.
+            Review of system concept, sizing, architecture and interfaces. Focus on practical risks, buildability and
+            lifecycle performance.
           </p>
+          <ul>
+            <li>BESS integration in PV and hybrid plants</li>
+            <li>Single line and interface review</li>
+            <li>Risk register and mitigation actions</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Configuration and integration review</h3>
           <p>
-            The platform is led by an engineer with 20+ years of experience across electrical engineering, photovoltaics and BESS,
-            combined with TÜV-certified expertise and hands-on EPC and commissioning work.
+            Technical validation of control, protection and integration aspects across BMS, EMS, PCS and grid interface.
+          </p>
+          <ul>
+            <li>Grid support functions and settings</li>
+            <li>Operational logic and safety boundaries</li>
+            <li>Communication and monitoring readiness</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Evidence documentation</h3>
+          <p>
+            Clear expert reporting with structured findings and actionable recommendations. Visual evidence can be added
+            as a supporting layer when useful.
+          </p>
+          <ul>
+            <li>Expert technical reports</li>
+            <li>Photo and documentation package</li>
+            <li>Optional visual evidence documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspections & Verification -->
+  <section id="inspections" class="section gray">
+    <div class="container">
+      <h2>Inspections & Verification</h2>
+      <p>
+        Independent inspections and recurring verification for operators, investors and manufacturers.
+        Designed to reduce risk, protect warranties and increase reliability across the BESS lifecycle.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Delivery verification (Waren-Eingang)</h3>
+          <p>
+            Structured delivery inspection and documentation check to confirm scope, quality and completeness before installation.
+          </p>
+          <ul>
+            <li>Component and documentation verification</li>
+            <li>Traceability and compliance checks</li>
+            <li>Findings report with actions</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Commissioning validation</h3>
+          <p>
+            Independent review of commissioning readiness, configuration and operational behavior at handover.
+          </p>
+          <ul>
+            <li>Functional checks and key parameters</li>
+            <li>Safety and operational readiness</li>
+            <li>Handover punch list and closeout</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Periodic inspections (6–12 months)</h3>
+          <p>
+            Recurring inspections to verify performance, detect early issues and support warranty discussions.
+          </p>
+          <ul>
+            <li>Performance and reliability review</li>
+            <li>Warranty support and dispute clarification</li>
+            <li>Operator inspection plus manufacturer verification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Due Diligence & Advisory -->
+  <section id="advisory" class="section">
+    <div class="container">
+      <h2>Due Diligence & Advisory</h2>
+      <p>
+        Technical due diligence and advisory for project development, transactions and financing.
+        Clear reporting, transparent risks and practical mitigation.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Technical due diligence</h3>
+          <p>
+            Independent assessment of design, documentation, interfaces and technical risks for BESS projects and portfolios.
+          </p>
+          <ul>
+            <li>Document review and gap analysis</li>
+            <li>Risk and mitigation recommendations</li>
+            <li>Bankable reporting approach</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Owner’s engineering support</h3>
+          <p>
+            Quality oversight and technical representation across procurement, execution and handover.
+          </p>
+          <ul>
+            <li>Design and interface coordination</li>
+            <li>Execution quality checks</li>
+            <li>Acceptance support and closeout</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Financing and stakeholder support</h3>
+          <p>
+            Technical advisory and structured reporting for lenders, investors and project stakeholders.
+          </p>
+          <ul>
+            <li>Milestone verification support</li>
+            <li>Transparent technical status reporting</li>
+            <li>Risk focused decision support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge & Podcast -->
+  <section id="knowledge" class="section gray">
+    <div class="container">
+      <h2>Knowledge & Podcast</h2>
+      <p>
+        Technical insights, field experience and expert conversations about BESS and grid integration.
+        The podcast is a knowledge channel that supports better technical decisions.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Latest episode</h3>
+          <p>
+            Add your latest episode link here when ready.
+          </p>
+          <ul>
+            <li>YouTube</li>
+            <li>Spotify</li>
+            <li>Apple Podcasts</li>
+          </ul>
+          <p>
+            <a href="#contact" class="btn primary">Share a topic suggestion</a>
           </p>
         </div>
 
         <div class="card">
-          <h3>Neutral by design</h3>
+          <h3>Core topics</h3>
           <ul>
-            <li>No manufacturer lock-in and no hidden commercial agenda</li>
-            <li>Objective evaluations aligned with technical, financial and regulatory requirements</li>
-            <li>Clear, evidence-based recommendations</li>
+            <li>BESS architecture, EMS, BMS, PCS</li>
+            <li>Grid connection and grid support</li>
+            <li>Reliability, warranty and lifecycle risks</li>
           </ul>
+        </div>
+
+        <div class="card">
+          <h3>For manufacturers</h3>
           <p>
-            Media, education and technical services can coexist, but neutrality must remain non-negotiable.
+            Technical product evaluation and EU market readiness support, including structured documentation
+            and cross-border technical coordination.
           </p>
+          <ul>
+            <li>Communication in German, English and Chinese</li>
+            <li>Evidence based documentation approach</li>
+            <li>Independent verification for EU trust</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section gray">
-      <div class="container">
-        <h2>Services</h2>
+      <!-- Email capture placeholder (not wired yet) -->
+      <div class="card" style="margin-top:24px;">
+        <h3>Email updates (placeholder)</h3>
         <p>
-          We assess, review and support renewable energy projects independently, with technical depth and a focus on what actually matters.
-          Whether wind, PV or storage, our services help detect risks early, reduce operating costs and keep assets safe, reliable and profitable.
+          This form is prepared for future activation. No emails will be sent until the subscription system is connected.
+        </p>
+        <form id="email-capture" action="#" method="post" onsubmit="return false;">
+          <label for="email" style="display:block; font-size:14px; margin-bottom:6px;">Email address</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input id="email" name="email" type="email" placeholder="name@company.com" required
+              style="flex:1; min-width:240px; padding:10px 12px; border-radius:12px; border:1px solid #e5e7eb;">
+            <button class="btn primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container two-column">
+      <div>
+        <h2>About BESS Experts</h2>
+        <p>
+          BESS Experts provides technically grounded, manufacturer-neutral support for BESS projects, including PV and grid integration.
+          The focus is on real project risks, reliable commissioning, and long-term operational performance.
+        </p>
+        <p>
+          Built on 20+ years of electrical engineering and field experience, with a practical approach to reporting and verification.
+          The goal is simple: reduce technical risk, avoid avoidable failures, and support professional decisions across stakeholders.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>How we work</h3>
+        <ul>
+          <li>Clear scope, clear deliverables, clear evidence</li>
+          <li>Lifecycle logic: evaluate, verify, operate, improve</li>
+          <li>Neutral reporting that stakeholders can trust</li>
+        </ul>
+        <p>
+          BESS Experts is not an EPC company and not a project competitor. Execution can be handled by your EPC or service partners.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section dark">
+    <div class="container contact-inner">
+      <div>
+        <h2>Contact</h2>
+        <p>
+          For technical services, inspections, due diligence, speaking or collaboration ideas, reach out using the details below.
+        </p>
+        <p class="contact-details">
+          Email: <a href="mailto:info@bess-experts.com">info@bess-experts.com</a><br>
+          LinkedIn: <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn profile</a>
         </p>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>Condition Monitoring</h3>
-            <p>
-              Reduce downtime and maximize availability with independent, data-driven monitoring and diagnostics.
-            </p>
-            <ul>
-              <li>Vibration analytics, SCADA data and AI-supported diagnostics</li>
-              <li>Early detection of bearing, gearbox and blade issues</li>
-              <li>Practical recommendations and measurable availability gains</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>PV Monitoring and Optimization</h3>
-            <p>
-              Transparency from PV strings to the grid connection point, with early fault detection and performance improvement.
-            </p>
-            <ul>
-              <li>SCADA integration and anomaly detection</li>
-              <li>Inverter, string, transformer and comms fault identification</li>
-              <li>Grid compliance support and performance improvements</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>BESS Monitoring and Analysis</h3>
-            <p>
-              Vendor-neutral monitoring and analysis from cell-level signals to the point of interconnection.
-            </p>
-            <ul>
-              <li>Cell temperature, cycling, voltage and system behavior analysis</li>
-              <li>Warranty-relevant documentation, audit-proof</li>
-              <li>Downtime prevention and long-term profitability focus</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section" style="padding: 0; margin-top: 24px;">
-          <div class="container" style="padding: 0;">
-            <div class="card">
-              <h3>Service areas in detail</h3>
-              <p style="margin-top: 8px;">
-                The following sections show how we work and what clients receive. Everything is structured so that owners, lenders and operators can act on it.
-              </p>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>1) Independent Condition Monitoring</strong></summary>
-                <p style="margin-top: 10px;">
-                  Condition monitoring is the continuous collection and analysis of operational and condition data from technical systems.
-                  The purpose is to detect performance losses and potential damage early, before they turn into costly downtime.
-                  This enables targeted maintenance planning, fewer outages and improved asset economics.
-                </p>
-                <p>
-                  Our independent analysis provides a reliable decision basis for operators, asset managers, insurers and investors for safe, compliant and profitable operation
-                  of wind, PV and storage systems.
-                </p>
-                <p>
-                  Why independent monitoring? Because independence is your advantage. We evaluate systems objectively without commercial interests and without contractual dependency on OEMs or service providers.
-                </p>
-                <ul>
-                  <li>Continuous monitoring: real-time analysis to detect deviations early, from turbine to battery storage</li>
-                  <li>Condition-based analyses: investigations for specific questions, such as before contract changes or at warranty expiry</li>
-                  <li>Failure analysis: root cause investigations for performance losses or outages</li>
-                  <li>Preventive services: avoid expensive damage and plan OPEX with asset lifetime in mind</li>
-                  <li>Cross-system advisory: wind, PV, storage and grid connection, vendor-neutral and data-driven</li>
-                </ul>
-                <p>
-                  Each engagement ends with a structured expert report and clear recommendations for correction, safety and optimization.
-                </p>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>2) PV Monitoring and Operational Optimization</strong></summary>
-                <p style="margin-top: 10px;">
-                  We deliver transparency over your PV plant from module string to the point of interconnection.
-                  Independent monitoring detects performance losses and malfunctions early and enables targeted interventions, stable grid integration and sustained yield.
-                </p>
-                <h4 style="margin-top: 12px;">Data-driven system analysis</h4>
-                <p>
-                  We use existing SCADA data and, if needed, add sensor technology to get a complete view of energy yields, loss drivers, system behavior and environmental factors.
-                  Our analysis identifies patterns, deviations and anomalies and provides a reliable basis for fast measures and strategic optimization.
-                </p>
-                <h4 style="margin-top: 12px;">Reliable fault detection</h4>
-                <p>
-                  Whether inverters, strings, transformers or communication interfaces, we identify typical failure sources early using historical benchmarks, temperature and voltage analysis and real-time alerts.
-                  This reduces downtime, increases operational safety and strengthens asset controlling.
-                </p>
-                <h4 style="margin-top: 12px;">Technical optimization and grid integration</h4>
-                <p>
-                  We highlight technical weaknesses like incorrect controller settings, overloaded components or insufficient reactive power provision.
-                  We provide concrete improvement options and support compliance with grid technical requirements.
-                </p>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>3) Data-based Monitoring and Analysis of Battery Energy Storage Systems</strong></summary>
-                <p style="margin-top: 10px;">
-                  Battery systems are key building blocks of modern energy systems. With our vendor-neutral monitoring, you can keep operational parameters under control,
-                  remain warranty-compliant and prevent unplanned outages.
-                </p>
-                <h4 style="margin-top: 12px;">Intelligent analysis down to cell level</h4>
-                <p>
-                  We integrate operational data into our analysis platform and combine existing SCADA data with additional sensor data if needed.
-                  This enables precise statements about cell temperature, charge and discharge cycles, voltage behavior and system response.
-                  Algorithms detect trends, deviations and potential failure sources for early corrective action.
-                </p>
-                <h4 style="margin-top: 12px;">Warranty-compliant and audit-proof</h4>
-                <p>
-                  Warranty compliance is critical. Monitoring checks relevant parameters like cycles, temperature profiles and limit values and documents them in an audit-proof way.
-                  This supports warranty claims and communication with OEMs, aggregators and insurers.
-                </p>
-                <h4 style="margin-top: 12px;">Long-term profitability</h4>
-                <p>
-                  A BESS is only valuable if it remains economically efficient over time. Monitoring enables verification that dispatch strategy and operation remain optimal.
-                  Inefficiencies can be identified and corrected with relevant stakeholders, protecting profitability in later operating years.
-                </p>
-                <h4 style="margin-top: 12px;">Early detection and outage prevention</h4>
-                <p>
-                  We identify anomalies before they become critical. Temperature peaks, voltage deviations or faulty state of charge behavior are detected, flagged and assessed so you can act proactively.
-                </p>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>4) Monitoring and Analysis of Grid Components and Power Quality</strong></summary>
-                <p style="margin-top: 10px;">
-                  We monitor and analyze grid infrastructure to ensure reliability and efficiency from generation assets to the grid operator interface.
-                  Continuous monitoring detects anomalies and potential disturbances before they become costly failures.
-                </p>
-                <h4 style="margin-top: 12px;">Data integration and real-time monitoring</h4>
-                <p>
-                  We integrate your SCADA system and can supplement infrastructure with measurement technology, such as partial discharge, insulation issues or critical temperature monitoring.
-                  Data is captured and processed in real time for decisions.
-                </p>
-                <h4 style="margin-top: 12px;">Power Quality Monitoring (PQM)</h4>
-                <p>
-                  Stable voltage, stable frequency, limited harmonics. With PQM we evaluate electrical power quality at the grid interface,
-                  document deviations and reduce the risk of follow-on damage, supporting compliant operation and evidence for grid operators.
-                </p>
-                <h4 style="margin-top: 12px;">Avoiding typical weak points</h4>
-                <p>
-                  Voltage dips, overloads and insulation faults are common. Our monitoring detects these early and helps resolve them.
-                </p>
-                <h4 style="margin-top: 12px;">Operational and investment security</h4>
-                <p>
-                  Grid components must perform for years. Monitoring supports preventive maintenance, robust fault analysis and economic operation for wind, PV, storage and hybrid systems.
-                </p>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>5) Photovoltaics: Due Diligence, Owner’s Engineering, Testing and Expert Reports</strong></summary>
-                <p style="margin-top: 10px;">
-                  We are an independent partner for technical advisory, inspections and expert reporting for PV plants from design through construction and operations to repowering.
-                  We identify weak points, evaluate yield and safety risks and provide clear recommendations for stable cashflows across the lifecycle.
-                </p>
-
-                <h4 style="margin-top: 12px;">Technical Due Diligence (TDD)</h4>
-                <ul>
-                  <li>Review of project documents, permits, contracts and concepts</li>
-                  <li>Design and component compatibility assessment</li>
-                  <li>Validation of yield forecasts, performance ratio and economics</li>
-                  <li>Risk identification with clear mitigation recommendations</li>
-                  <li>Structured, bankable reporting</li>
-                </ul>
-
-                <h4 style="margin-top: 12px;">Owner’s Engineering</h4>
-                <ul>
-                  <li>Planning and design review and optimization</li>
-                  <li>Tender documentation support</li>
-                  <li>Construction supervision and quality control</li>
-                  <li>Commissioning, acceptance tests and punch list management</li>
-                  <li>Transparent documentation and progress reporting</li>
-                </ul>
-
-                <h4 style="margin-top: 12px;">DGUV V3 testing</h4>
-                <p>
-                  Transfer stations are electrical operating rooms and require regular testing. We provide LV and HV test scope including measurements, functional checks and documented results.
-                </p>
-
-                <h4 style="margin-top: 12px;">Glare assessment</h4>
-                <p>
-                  PV can cause glare for residents, roads, rail or airports. We simulate glare impact and provide authority-ready documentation plus mitigation recommendations.
-                </p>
-
-                <h4 style="margin-top: 12px;">Damage expert reports</h4>
-                <p>
-                  Independent documentation, root cause analysis and court-ready reporting, optionally supported by thermography, IV curves and electroluminescence testing.
-                </p>
-
-                <h4 style="margin-top: 12px;">Yield assessment</h4>
-                <p>
-                  Bankable yield reports based on recognized simulation methods and transparent loss factor modeling.
-                </p>
-
-                <h4 style="margin-top: 12px;">Drone services</h4>
-                <p>
-                  Thermal inspections, orthophotos, construction progress documentation and AI-supported image evaluation with clear digital reporting.
-                </p>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>6) Certification and Grid Integration</strong></summary>
-                <p style="margin-top: 10px;">
-                  We support solar and storage projects through certification and verification needed for grid connection.
-                  Scope includes fault ride through tests, grid connection studies, protection testing and compliance evidence aligned with VDE-AR-N 4110/4120/4130 requirements.
-                </p>
-                <ul>
-                  <li>Plant certification and prototype reports</li>
-                  <li>Conformity verification after commissioning</li>
-                  <li>Structured documentation for grid operators and authorities</li>
-                </ul>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>7) HSE Advisory and Electrical Safety Organization</strong></summary>
-                <p style="margin-top: 10px;">
-                  We support quality, health, safety and environment topics from planning through operation, onshore or offshore.
-                  We also help build a working electrical safety organization with clear roles, processes and evidence.
-                </p>
-                <ul>
-                  <li>Roles and responsibilities: VEFK guidance and clear assignment logic</li>
-                  <li>Electrical safety processes: switching and work instructions, lockout tagout, contractor control</li>
-                  <li>Testing and maintenance organization: DGUV V3 concept, test registry, intervals, templates</li>
-                  <li>Management systems and audits: ISO 9001/14001/45001 support, practical implementation</li>
-                  <li>Risk assessments and HSE concepts: emergency plans, training, site rules, reporting</li>
-                </ul>
-              </details>
-
-              <details style="margin-top: 14px;">
-                <summary><strong>8) Storage technologies: Independent testing, DGUV V3 and Due Diligence</strong></summary>
-                <p style="margin-top: 10px;">
-                  We verify battery storage systems for safety, contract compliance, accepted engineering practice and state of the art, from single projects to hybrid plants.
-                  The goal is technical reliability, regulatory compliance and long-term economic operability.
-                </p>
-                <h4 style="margin-top: 12px;">Independent testing for storage projects</h4>
-                <ul>
-                  <li>Construction progress checks with detailed reporting and punch lists</li>
-                  <li>Commissioning verification, including readiness confirmations where needed</li>
-                  <li>Post-commissioning technical acceptance and contract compliance verification</li>
-                </ul>
-                <h4 style="margin-top: 12px;">DGUV V3 for storage plants and transfer stations</h4>
-                <p>
-                  Recurring DGUV V3 testing improves safety and legal security. We provide LV and HV scope with protection relay checks, partial discharge measurement, lightning protection checks and documented results.
-                </p>
-                <h4 style="margin-top: 12px;">Due Diligence for BESS projects</h4>
-                <p>
-                  We help investors and owners identify technical risks early by reviewing legal requirements, contracts, quality assurance, acceptance, warranty phase topics and operational performance.
-                </p>
-              </details>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MEDIA -->
-    <section id="media" class="section">
-      <div class="container">
-        <h2>Media and Knowledge</h2>
-        <p>
-          In parallel to technical services, BESS Experts publishes practical content to reduce confusion in the market and improve technical decision-making:
-          interviews, explainers, webinars and field-driven breakdowns of what actually fails and why.
+        <p style="margin-top:14px; font-size:14px; opacity:0.9;">
+          Language pages:
+          <a href="/de.html" style="color:#60a5fa;">Deutsch</a>
+          |
+          <a href="/zh.html" style="color:#60a5fa;">中文</a>
+          |
+          <a href="/?lang=en" style="color:#60a5fa;" onclick="localStorage.setItem('bessexperts_lang_choice','en');">English</a>
         </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Interviews</h3>
-            <p>Technical conversations with OEMs, EPCs, operators, investors, software providers and grid stakeholders.</p>
-            <ul>
-              <li>BESS safety and compliance</li>
-              <li>Hybrid plants and grid constraints</li>
-              <li>Reliability and O and M reality</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Explainers</h3>
-            <p>Clear, structured explanations of topics that are often misunderstood.</p>
-            <ul>
-              <li>EMS vs BMS vs PCS roles</li>
-              <li>Value stacking and operational strategy</li>
-              <li>Common failure modes and prevention</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Channels</h3>
-            <p>Links can be added once your first episodes and clips are live.</p>
-            <ul>
-              <li>YouTube</li>
-              <li>Spotify and Apple Podcasts</li>
-              <li>LinkedIn</li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <section id="topics" class="section gray">
-      <div class="container">
-        <h2>Core topics</h2>
-        <div class="process-grid">
-          <div class="step">
-            <span class="step-number">1</span>
-            <h3>Technology and integration</h3>
-            <p>Microgrids, data centers, PCS, EMS, BMS, grid forming and hybrid systems.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <h3>Grid and regulation</h3>
-            <p>Grid connection, bottlenecks, compliance, certification and standards.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <h3>Business and finance</h3>
-            <p>Revenue stacks, flexibility markets, contracts and risk allocation.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">4</span>
-            <h3>Operations and reliability</h3>
-            <p>Performance, failures, maintenance, warranties and service models.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">5</span>
-            <h3>Future of storage</h3>
-            <p>AI in control, new chemistries, long duration storage and system trends.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">6</span>
-            <h3>People and decisions</h3>
-            <p>How owners, OEMs, EPCs, operators and regulators actually decide.</p>
-          </div>
-        </div>
+      <div class="card contact-card">
+        <h3>To help us respond fast</h3>
+        <ul>
+          <li>Project location and system size</li>
+          <li>BESS scope (and PV/grid scope if relevant)</li>
+          <li>Stage: planning, delivery, commissioning or operation</li>
+          <li>What you need: report, inspection, verification or advisory</li>
+        </ul>
+        <p>
+          If you prefer, share a short technical brief and we will propose a structured scope and deliverables.
+        </p>
       </div>
-    </section>
-
-    <section id="contact" class="section dark">
-      <div class="container contact-inner">
-        <div>
-          <h2>Contact</h2>
-          <p>
-            For technical services, expert reports, monitoring programs, speaking or media collaboration, contact us.
-          </p>
-          <p class="contact-details">
-            Email: <a href="mailto:info@bess-experts.com">info@bess-experts.com</a><br>
-            LinkedIn: <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn profile</a>
-          </p>
-        </div>
-
-        <div class="card contact-card">
-          <h3>To get a quote faster</h3>
-          <ul>
-            <li>Asset type: BESS, PV, wind, grid components</li>
-            <li>Project phase: development, construction, commissioning, operation</li>
-            <li>Location and timeline</li>
-            <li>Goal: compliance, performance, failure case, lender report</li>
-          </ul>
-          <p>
-            This helps us structure scope, deliverables and timeline without wasting time on vague calls.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> BESS Experts. All rights reserved.</span>
-      <span class="footer-note">Independent technical services and practical media for BESS, PV and grid assets.</span>
+      <span class="footer-note">Technical lifecycle authority for Battery Energy Storage Systems.</span>
     </div>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Store language preference if user uses explicit links
+      (function () {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var lang = params.get("lang");
+          if (lang) localStorage.setItem("bessexperts_lang_choice", lang);
+        } catch (e) {}
+      })();
     </script>
   </footer>
 </body>
