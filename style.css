@@ -333,3 +333,20 @@ a {
   font-weight: 700;
   text-decoration: underline;
 }
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  margin-left: 18px;
+  padding-left: 18px;
+  border-left: 1px solid rgba(249, 250, 251, 0.25);
+}
+
+.lang-switch a {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
