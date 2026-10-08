@@ -15,7 +15,8 @@
   <link rel="alternate" hreflang="zh" href="https://bess-experts.com/zh.html" />
   <link rel="alternate" hreflang="x-default" href="https://bess-experts.com/" />
 
-  <!-- Favicon -->
+  <!-- Favicon: add one of these files to repo root -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.png" type="image/png">
 
   <!-- Open Graph -->
@@ -36,20 +37,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ingenieurbüro BESS EXPERTS",
-    "alternateName": "BESS Experts",
-    "url": "https://bess-experts.com/",
+    "@type": "Organization",
+    "name": "BESS Experts",
+    "url": "https://bess-experts.com/zh.html",
     "logo": "https://bess-experts.com/logo.png",
-    "image": "https://bess-experts.com/logo.png",
-    "email": "info@bess-experts.com",
-    "telephone": "+49 157 33333368",
-    "founder": {"@type": "Person", "name": "Mohsen Ghaemi Tabrizi", "jobTitle": "Ingenieur"},
-    "address": {"@type": "PostalAddress", "streetAddress": "Schulstraße 23", "postalCode": "63110", "addressLocality": "Rodgau", "addressRegion": "Hessen", "addressCountry": "DE"},
-    "areaServed": ["DE", "AT", "CH", "EU"],
-    "knowsAbout": ["Battery Energy Storage Systems", "BESS", "Photovoltaics", "Grid integration", "Technical due diligence", "Commissioning", "Inspections"],
     "description": "面向欧洲市场的电池储能系统（BESS）独立技术服务、第三方验证与证据化报告。",
-    "sameAs": ["https://www.linkedin.com/company/bess-experts/"]
+    "sameAs": [
+      "https://www.linkedin.com/company/bess-experts/"
+    ]
   }
   </script>
 
@@ -79,9 +74,8 @@
         <a href="#about">关于我们</a>
         <a href="#contact">联系</a>
         <div class="lang-switch">
-  <a href="/?lang=en" onclick="localStorage.setItem('bessexperts_lang_choice','en');">EN</a>
+  <a href="/" onclick="localStorage.setItem('bessexperts_lang_choice','en');">EN</a>
   <a href="/de.html" onclick="localStorage.setItem('bessexperts_lang_choice','de');">DE</a>
-  <a href="/zh.html" onclick="localStorage.setItem('bessexperts_lang_choice','zh');" class="active-lang" aria-current="page">中文</a>
 </div>
       </nav>
     </div>
@@ -276,7 +270,7 @@
         <div class="card">
           <h3>最新一期</h3>
           <p>
-            新一期将在我们的 <a href="https://www.linkedin.com/company/bess-experts/" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn 页面</a> 发布。
+            等您准备好后，可在这里放置最新一期的链接。
           </p>
           <ul>
             <li>YouTube</li>
@@ -309,6 +303,22 @@
           </ul>
         </div>
       </div>
+
+      <!-- Email capture placeholder (not wired yet) -->
+      <div class="card" style="margin-top:24px;">
+        <h3>邮箱收集（占位）</h3>
+        <p>
+          该表单已预留，后续接入订阅系统前不会发送任何邮件。
+        </p>
+        <form id="email-capture" action="#" method="post" onsubmit="return false;">
+          <label for="email" style="display:block; font-size:14px; margin-bottom:6px;">邮箱</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input id="email" name="email" type="email" placeholder="name@company.com" required
+              style="flex:1; min-width:240px; padding:10px 12px; border-radius:12px; border:1px solid #e5e7eb;">
+            <button class="btn primary" type="submit">提交</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -334,7 +344,7 @@
           <li>独立立场，便于欧洲业主与机构接受</li>
         </ul>
         <p>
-          BESS Experts 不自行承担 EPC 或安装工程。现场执行由您的 EPC 或运维团队完成。
+          BESS Experts 不是 EPC，也不与项目执行方竞争。现场执行可由您的 EPC 或运维团队完成。
         </p>
       </div>
     </div>
@@ -350,7 +360,6 @@
         </p>
         <p class="contact-details">
           邮箱: <a href="mailto:info@bess-experts.com">info@bess-experts.com</a><br>
-          电话: <a href="tel:+4915733333368">+49 157 333 333 68</a><br>
           LinkedIn: <a href="https://www.linkedin.com/company/bess-experts/" target="_blank" rel="noopener">LinkedIn</a>
         </p>
 
@@ -380,7 +389,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> BESS Experts. 保留所有权利。</span>
-      <span class="footer-note">面向 BESS 的全生命周期技术专长。</span>
+      <span class="footer-note">面向 BESS 的全生命周期技术权威。</span>
       <span class="footer-links"><a href="/impressum.html">法律声明 (Impressum)</a> · <a href="/datenschutz.html">隐私政策 (Datenschutz)</a></span>
     </div>
     <script>

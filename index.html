@@ -15,7 +15,8 @@
   <link rel="alternate" hreflang="zh" href="https://bess-experts.com/zh.html" />
   <link rel="alternate" hreflang="x-default" href="https://bess-experts.com/" />
 
-  <!-- Favicon -->
+  <!-- Favicon: add one of these files to repo root -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.png" type="image/png">
 
   <!-- Open Graph -->
@@ -72,20 +73,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ingenieurbüro BESS EXPERTS",
-    "alternateName": "BESS Experts",
+    "@type": "Organization",
+    "name": "BESS Experts",
     "url": "https://bess-experts.com/",
     "logo": "https://bess-experts.com/logo.png",
-    "image": "https://bess-experts.com/logo.png",
-    "email": "info@bess-experts.com",
-    "telephone": "+49 157 33333368",
-    "founder": {"@type": "Person", "name": "Mohsen Ghaemi Tabrizi", "jobTitle": "Ingenieur"},
-    "address": {"@type": "PostalAddress", "streetAddress": "Schulstraße 23", "postalCode": "63110", "addressLocality": "Rodgau", "addressRegion": "Hessen", "addressCountry": "DE"},
-    "areaServed": ["DE", "AT", "CH", "EU"],
-    "knowsAbout": ["Battery Energy Storage Systems", "BESS", "Photovoltaics", "Grid integration", "Technical due diligence", "Commissioning", "Inspections"],
     "description": "Technical services, inspections and expert reports for Battery Energy Storage Systems (BESS), PV and grid integration.",
-    "sameAs": ["https://www.linkedin.com/company/bess-experts/"]
+    "sameAs": [
+      "https://www.linkedin.com/company/bess-experts/"
+    ]
   }
   </script>
 
@@ -95,7 +90,12 @@
     "@type": "WebSite",
     "name": "BESS Experts",
     "url": "https://bess-experts.com/",
-    "inLanguage": "en"
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://bess-experts.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -115,9 +115,8 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <div class="lang-switch">
-  <a href="/?lang=en" onclick="localStorage.setItem('bessexperts_lang_choice','en');" class="active-lang" aria-current="page">EN</a>
+  <a href="/" onclick="localStorage.setItem('bessexperts_lang_choice','en');">EN</a>
   <a href="/de.html" onclick="localStorage.setItem('bessexperts_lang_choice','de');">DE</a>
-  <a href="/zh.html" onclick="localStorage.setItem('bessexperts_lang_choice','zh');">中文</a>
 </div>
       </nav>
     </div>
@@ -318,7 +317,7 @@
         <div class="card">
           <h3>Latest episode</h3>
           <p>
-            New episodes are announced on our <a href="https://www.linkedin.com/company/bess-experts/" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn page</a>.
+            Add your latest episode link here when ready.
           </p>
           <ul>
             <li>YouTube</li>
@@ -352,6 +351,22 @@
           </ul>
         </div>
       </div>
+
+      <!-- Email capture placeholder (not wired yet) -->
+      <div class="card" style="margin-top:24px;">
+        <h3>Email updates (placeholder)</h3>
+        <p>
+          This form is prepared for future activation. No emails will be sent until the subscription system is connected.
+        </p>
+        <form id="email-capture" action="#" method="post" onsubmit="return false;">
+          <label for="email" style="display:block; font-size:14px; margin-bottom:6px;">Email address</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input id="email" name="email" type="email" placeholder="name@company.com" required
+              style="flex:1; min-width:240px; padding:10px 12px; border-radius:12px; border:1px solid #e5e7eb;">
+            <button class="btn primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -378,7 +393,7 @@
           <li>Neutral reporting that stakeholders can trust</li>
         </ul>
         <p>
-          BESS Experts does not carry out EPC or installation work itself. Execution is handled by your EPC or service partners.
+          BESS Experts is not an EPC company and not a project competitor. Execution can be handled by your EPC or service partners.
         </p>
       </div>
     </div>
@@ -394,7 +409,6 @@
         </p>
         <p class="contact-details">
           Email: <a href="mailto:info@bess-experts.com">info@bess-experts.com</a><br>
-          Phone: <a href="tel:+4915733333368">+49 157 333 333 68</a><br>
           LinkedIn: <a href="https://www.linkedin.com/company/bess-experts/" target="_blank" rel="noopener">LinkedIn profile</a>
         </p>
 
@@ -424,7 +438,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> BESS Experts. All rights reserved.</span>
-      <span class="footer-note">Technical lifecycle expertise for Battery Energy Storage Systems.</span>
+      <span class="footer-note">Technical lifecycle authority for Battery Energy Storage Systems.</span>
       <span class="footer-links"><a href="/impressum.html">Legal notice</a> · <a href="/datenschutz.html">Privacy policy</a></span>
     </div>
     <script>
